@@ -11,6 +11,7 @@ var app = express();
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
+app.use(express.urlencoded({extended:false}));
 
 // use res.render to load up an ejs view file
 
@@ -30,5 +31,18 @@ app.get('/about', function(req, res) {
     res.render('pages/about');
 });
 
+//form page
+
+app.get('/add-mascot', function(req, res) {
+    res.render('pages/form');
+});
+
+app.post('/add-mascot', function(req, res) {
+    let newMascot = { name: req.body.name, organization: req.body.organization, birth_year: req.body.year};
+    mascots.push(newMascot)
+    res.redirect('/')
+});
+
+
 app.listen(8080);
-console.log('8080 is the magic port');
+// console.log('8080 is the magic port');

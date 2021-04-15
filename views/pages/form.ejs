@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <h1>Add Mascot</h1>
+        <form class="needs-validation" action="/add-mascot" method="POST">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+        </br>
+            <div class="form-group">
+              <label for="organization">Organization:</label>
+              <input type="text" class="form-control" id="organization" name="organization" required>
+            </div>
+        </br>
+            <div class="form-group">
+                <label for="year">Year of creation:</label>
+                <input type="number" class="form-control" id="year" name="year" required>
+              </div>
+            </br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>
